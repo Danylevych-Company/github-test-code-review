@@ -4,6 +4,9 @@ const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 const navbar = document.querySelector('.navbar');
 const contactForm = document.querySelector('.contact-form');
+const themeToggle = document.getElementById('theme-toggle');
+const progressBar = document.getElementById('progress-bar');
+const backToTopBtn = document.getElementById('back-to-top');
 
 // Mobile Navigation Toggle
 hamburger.addEventListener('click', () => {
@@ -158,14 +161,31 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe elements for animation
+// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+
   const animateElements = document.querySelectorAll('.project-card, .skill-category, .stat, .contact-form');
 
   animateElements.forEach(el => {
     el.classList.add('animate-prepare');
     observer.observe(el);
   });
+
+  // Animate skill bars when skills section comes into view
+  const skillsSection = document.getElementById('skills');
+  if (skillsSection) {
+    const skillsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateSkillBars();
+          skillsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    skillsObserver.observe(skillsSection);
+  }
 });
 
 // Typing animation for hero title
@@ -253,6 +273,101 @@ document.addEventListener('mouseleave', () => {
   if (cursor) {
     cursor.classList.remove('visible');
   }
+});
+
+// Theme Management
+function initTheme() {
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateThemeIcon(savedTheme);
+}
+
+function updateThemeIcon(theme) {
+  const icon = themeToggle.querySelector('i');
+  if (theme === 'dark') {
+    icon.className = 'fas fa-sun';
+  } else {
+    icon.className = 'fas fa-moon';
+  }
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  updateThemeIcon(newTheme);
+}
+
+// Progress Bar
+function updateProgressBar() {
+  const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = (window.scrollY / windowHeight) * 100;
+  progressBar.style.width = Math.min(scrolled, 100) + '%';
+}
+
+// Back to Top Button
+function updateBackToTopBtn() {
+  if (window.scrollY > 300) {
+    backToTopBtn.classList.add('visible');
+  } else {
+    backToTopBtn.classList.remove('visible');
+  }
+}
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+// Skill Progress Animation
+function animateSkillBars() {
+  const skillBars = document.querySelectorAll('.skill-progress-bar');
+
+  skillBars.forEach(bar => {
+    const skillLevel = bar.getAttribute('data-skill');
+    bar.style.setProperty('--skill-width', skillLevel + '%');
+
+    // Add animation class with delay
+    setTimeout(() => {
+      bar.classList.add('animate');
+      bar.style.width = skillLevel + '%';
+    }, 200);
+  });
+}
+
+// Typing Effect Enhancement
+function createTypingEffect(element, text, speed = 50) {
+  element.innerHTML = '';
+  let i = 0;
+
+  function typeChar() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeChar, speed + Math.random() * 30); // Add slight randomness
+    } else {
+      // Add blinking cursor effect
+      element.innerHTML += '<span class="cursor">|</span>';
+    }
+  }
+
+  typeChar();
+}
+
+// Event Listeners
+themeToggle?.addEventListener('click', toggleTheme);
+backToTopBtn?.addEventListener('click', scrollToTop);
+
+// Enhanced scroll listener
+window.addEventListener('scroll', () => {
+  updateProgressBar();
+  updateBackToTopBtn();
+
+  // ...existing scroll code...
 });
 
 console.log('🚀 Profile website loaded successfully! Ready for GitHub Code Reviewer testing.');

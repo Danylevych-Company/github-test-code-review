@@ -30,6 +30,11 @@
                 <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -38,6 +43,14 @@
             </div>
         </div>
     </nav>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <main>
         <!-- Hero Section -->
@@ -109,34 +122,88 @@
                     <div class="skill-category">
                         <h3>Frontend</h3>
                         <div class="skill-items">
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">TypeScript</span>
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">Vue.js</span>
-                            <span class="skill-tag">HTML5</span>
-                            <span class="skill-tag">CSS3</span>
+                            <div class="skill-item">
+                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-skill="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">TypeScript</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-skill="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">React</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-skill="88"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Vue.js</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-skill="85"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="skill-category">
                         <h3>Backend</h3>
                         <div class="skill-items">
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Express</span>
-                            <span class="skill-tag">Django</span>
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">MongoDB</span>
+                            <div class="skill-item">
+                                <span class="skill-name">Node.js</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-skill="92"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-skill="87"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">PostgreSQL</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-skill="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">MongoDB</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-skill="75"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="skill-category">
                         <h3>DevOps & Tools</h3>
                         <div class="skill-items">
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">GitHub Actions</span>
-                            <span class="skill-tag">ESLint</span>
-                            <span class="skill-tag">Jest</span>
+                            <div class="skill-item">
+                                <span class="skill-name">Docker</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-skill="83"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">AWS</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-skill="78"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">GitHub Actions</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-skill="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Jest</span>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" data-skill="90"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -159,6 +226,18 @@
                                 <span class="tech-tag">Python</span>
                                 <span class="tech-tag">GitHub API</span>
                                 <span class="tech-tag">AI/ML</span>
+                            </div>
+                            <div class="project-stats">
+                                <div class="project-stat">
+                                    <span class="stat-icon">⭐</span>
+                                    <span class="stat-value">150+</span>
+                                    <span class="stat-label">Stars</span>
+                                </div>
+                                <div class="project-stat">
+                                    <span class="stat-icon">🔀</span>
+                                    <span class="stat-value">25</span>
+                                    <span class="stat-label">Forks</span>
+                                </div>
                             </div>
                             <div class="project-links">
                                 <a href="#" class="project-link">
