@@ -1,131 +1,131 @@
-# Сайт-профайл Данила Левича
+# Danylo Levych Profile Website
 
-Це сучасний адаптивний сайт-профайл, створений для тестування GitHub Code Reviewer. Сайт демонструє навички розробки та досвід у створенні веб-застосунків.
+This is a modern responsive profile website created for testing GitHub Code Reviewer. The website showcases development skills and experience in creating web applications.
 
-## 🚀 Особливості
+## 🚀 Features
 
-- **Сучасний дизайн**: Мінімалістичний та професійний дизайн з градієнтами та анімаціями
-- **Повністю адаптивний**: Оптимізований для всіх пристроїв (десктоп, планшет, мобільний)
-- **Інтерактивність**: Плавні анімації, ефекти при наведенні та динамічний контент
-- **Швидкість**: Оптимізовані зображення та CSS для швидкого завантаження
-- **Accessibility**: Семантична HTML структура та доступність для скрін-рідерів
+- **Modern Design**: Minimalist and professional design with gradients and animations
+- **Fully Responsive**: Optimized for all devices (desktop, tablet, mobile)
+- **Interactive**: Smooth animations, hover effects, and dynamic content
+- **Fast**: Optimized images and CSS for quick loading
+- **Accessibility**: Semantic HTML structure and screen reader accessibility
 
-## 🛠️ Технології
+## 🛠️ Technologies
 
-- **HTML5**: Семантична розмітка
-- **CSS3**: Flexbox, Grid, анімації, кастомні властивості
-- **JavaScript (ES6+)**: Модерний JavaScript з ES6+ функціями
-- **Font Awesome**: Іконки
-- **Google Fonts**: Типографіка (Inter)
-- **Unsplash**: Високоякісні зображення
+- **HTML5**: Semantic markup
+- **CSS3**: Flexbox, Grid, animations, custom properties
+- **JavaScript (ES6+)**: Modern JavaScript with ES6+ features
+- **Font Awesome**: Icons
+- **Google Fonts**: Typography (Inter)
+- **Unsplash**: High-quality images
 
-## 📁 Структура проекту
+## 📁 Project Structure
 
 ```
 github-test-code-review/
-├── index.html          # Головна HTML сторінка
-├── styles.css          # Стилі CSS
-├── script.js           # JavaScript функціональність
-└── README.md           # Документація проекту
+├── index.html          # Main HTML page
+├── styles.css          # CSS styles
+├── script.js           # JavaScript functionality
+└── README.md           # Project documentation
 ```
 
-## 🎨 Секції сайту
+## 🎨 Website Sections
 
-1. **Навігація**: Фіксована навігаційна панель з плавним скролом
-2. **Hero секція**: Вступна секція з анімацією та CTA кнопками
-3. **Про мене**: Інформація про досвід та статистика
-4. **Навички**: Технічні навички, розділені по категоріях
-5. **Проекти**: Портфоліо з останніми проектами
-6. **Контакти**: Форма зворотного зв'язку та контактна інформація
+1. **Navigation**: Fixed navigation bar with smooth scrolling
+2. **Hero Section**: Introduction section with animation and CTA buttons
+3. **About Me**: Information about experience and statistics
+4. **Skills**: Technical skills divided by categories
+5. **Projects**: Portfolio with recent projects
+6. **Contact**: Contact form and contact information
 
-## 🚀 Швидкий старт
+## 🚀 Quick Start
 
-1. Клонуйте репозиторій:
+1. Clone the repository:
 ```bash
 git clone https://github.com/danylevych/github-test-code-review.git
 ```
 
-2. Перейдіть в папку проекту:
+2. Navigate to the project folder:
 ```bash
 cd github-test-code-review
 ```
 
-3. Відкрийте `index.html` у браузері або запустіть локальний сервер:
+3. Open `index.html` in browser or run a local server:
 ```bash
-# Використовуючи Python
+# Using Python
 python -m http.server 8000
 
-# Використовуючи Node.js (якщо встановлено http-server)
+# Using Node.js (if http-server is installed)
 npx http-server
 
-# Використовуючи PHP
+# Using PHP
 php -S localhost:8000
 ```
 
-4. Перейдіть за адресою `http://localhost:8000`
+4. Go to `http://localhost:8000`
 
-## 🎯 Мета проекту
+## 🎯 Project Goal
 
-Цей сайт створено спеціально для тестування GitHub Code Reviewer - інструменту для автоматичного аналізу якості коду. Проект включає:
+This website was created specifically for testing GitHub Code Reviewer - a tool for automatic code quality analysis. The project includes:
 
-- Різні типи коду (HTML, CSS, JavaScript)
-- Сучасні практики веб-розробки
-- Потенційні місця для покращення коду
-- Демонстрацію різних архітектурних підходів
+- Different types of code (HTML, CSS, JavaScript)
+- Modern web development practices
+- Potential areas for code improvement
+- Demonstration of different architectural approaches
 
-## 📱 Адаптивність
+## 📱 Responsiveness
 
-Сайт оптимізований для:
-- **Десктоп**: 1200px і більше
-- **Планшет**: 768px - 1199px
-- **Мобільні пристрої**: до 767px
+The website is optimized for:
+- **Desktop**: 1200px and above
+- **Tablet**: 768px - 1199px
+- **Mobile devices**: up to 767px
 
-## ⚡ Оптимізація продуктивності
+## ⚡ Performance Optimization
 
-- Мінімізовані ресурси
-- Оптимізовані зображення
-- Ефективне використання CSS Grid та Flexbox
-- Lazy loading для зображень
-- Асинхронне завантаження скриптів
+- Minimized resources
+- Optimized images
+- Efficient use of CSS Grid and Flexbox
+- Lazy loading for images
+- Asynchronous script loading
 
-## 🎨 Дизайн-система
+## 🎨 Design System
 
-### Кольори
-- **Основний**: #2563eb (синій)
-- **Вторинний**: #64748b (сірий)
-- **Акцент**: #f59e0b (помаранчевий)
-- **Фон**: #ffffff (білий)
-- **Поверхня**: #f8fafc (світло-сірий)
+### Colors
+- **Primary**: #2563eb (blue)
+- **Secondary**: #64748b (gray)
+- **Accent**: #f59e0b (orange)
+- **Background**: #ffffff (white)
+- **Surface**: #f8fafc (light gray)
 
-### Типографіка
-- **Основний шрифт**: Inter (Google Fonts)
-- **Розміри**: від 0.8rem до 3.5rem
-- **Вага**: 300, 400, 500, 600, 700
+### Typography
+- **Main font**: Inter (Google Fonts)
+- **Sizes**: from 0.8rem to 3.5rem
+- **Weights**: 300, 400, 500, 600, 700
 
-## 🔧 Розширення та налаштування
+## 🔧 Extension and Customization
 
-### Додавання нових проектів
-Відредагуйте секцію `.projects-grid` в `index.html` та додайте новий `.project-card`.
+### Adding new projects
+Edit the `.projects-grid` section in `index.html` and add a new `.project-card`.
 
-### Зміна кольорової схеми
-Змініть CSS змінні в `:root` селекторі в `styles.css`.
+### Changing color scheme
+Modify CSS variables in the `:root` selector in `styles.css`.
 
-### Додавання нових секцій
-1. Додайте HTML секцію
-2. Додайте відповідні стилі в CSS
-3. Оновіть навігацію
+### Adding new sections
+1. Add HTML section
+2. Add corresponding styles in CSS
+3. Update navigation
 
-## 📞 Контакти
+## 📞 Contact
 
 - **Email**: danylo.levych@example.com
 - **LinkedIn**: [linkedin.com/in/danylolevych](https://linkedin.com/in/danylolevych)
 - **GitHub**: [github.com/danylevych](https://github.com/danylevych)
 
-## 📄 Ліцензія
+## 📄 License
 
-Цей проект створено для освітніх та тестових цілей. Використовуйте код вільно для навчання та розробки.
+This project was created for educational and testing purposes. Feel free to use the code for learning and development.
 
 ---
 
-**Примітка**: Цей сайт створено спеціально для тестування GitHub Code Reviewer та демонстрації можливостей автоматичного аналізу коду. Всі дані є тестовими.
+**Note**: This website was created specifically for testing GitHub Code Reviewer and demonstrating automated code analysis capabilities. All data is for testing purposes.
 # github-test-code-review

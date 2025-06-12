@@ -1,0 +1,26 @@
+{
+  "name": "profile-website-test",
+  "version": "1.0.0",
+  "description": "Profile website for testing GitHub Code Reviewer",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "profile",
+    "website",
+    "portfolio",
+    "github",
+    "code-review",
+    "test"
+  ],
+  "author": "Danylo Levych",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danylevych/github-test-code-review.git"
+  },
+  "homepage": "https://danylevych.github.io/github-test-code-review"
+}
