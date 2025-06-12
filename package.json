@@ -1,7 +1,7 @@
 {
   "name": "profile-website-test",
   "version": "1.0.0",
-  "description": "Сайт-профайл для тестування GitHub Code Reviewer",
+  "description": "Profile website for testing GitHub Code Reviewer",
   "main": "index.html",
   "scripts": {
     "start": "python3 -m http.server 8000",
@@ -16,7 +16,7 @@
     "code-review",
     "test"
   ],
-  "author": "Данило Левич",
+  "author": "Danylo Levych",
   "license": "MIT",
   "repository": {
     "type": "git",

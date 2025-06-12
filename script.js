@@ -22,11 +22,9 @@ navLinks.forEach(link => {
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
   if (window.scrollY > 100) {
-    navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-    navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+    navbar.classList.add('scrolled');
   } else {
-    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-    navbar.style.boxShadow = 'none';
+    navbar.classList.remove('scrolled');
   }
 });
 
@@ -73,16 +71,14 @@ contactForm.addEventListener('submit', function (e) {
   const formData = new FormData(this);
   const name = formData.get('name');
   const email = formData.get('email');
-  const message = formData.get('message');
-
-  // Basic validation
+  const message = formData.get('message');    // Basic validation
   if (!name || !email || !message) {
-    showNotification('Будь ласка, заповніть всі поля', 'error');
+    showNotification('Please fill in all fields', 'error');
     return;
   }
 
   if (!isValidEmail(email)) {
-    showNotification('Будь ласка, введіть коректний email', 'error');
+    showNotification('Please enter a valid email', 'error');
     return;
   }
 
@@ -90,11 +86,11 @@ contactForm.addEventListener('submit', function (e) {
   const submitButton = this.querySelector('button[type="submit"]');
   const originalText = submitButton.textContent;
 
-  submitButton.textContent = 'Надсилається...';
+  submitButton.textContent = 'Sending...';
   submitButton.disabled = true;
 
   setTimeout(() => {
-    showNotification('Повідомлення успішно надіслано!', 'success');
+    showNotification('Message sent successfully!', 'success');
     this.reset();
     submitButton.textContent = originalText;
     submitButton.disabled = false;
@@ -125,57 +121,24 @@ function showNotification(message, type = 'info') {
         </div>
     `;
 
-  // Add styles
-  notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
-        color: white;
-        padding: 1rem 1.5rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        z-index: 10000;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        max-width: 400px;
-    `;
-
-  notification.querySelector('.notification-content').style.cssText = `
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-    `;
-
-  notification.querySelector('.notification-close').style.cssText = `
-        background: none;
-        border: none;
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-        padding: 0;
-        line-height: 1;
-    `;
-
   // Add to DOM
   document.body.appendChild(notification);
 
   // Animate in
   setTimeout(() => {
-    notification.style.transform = 'translateX(0)';
+    notification.classList.add('show');
   }, 100);
 
   // Close button functionality
   notification.querySelector('.notification-close').addEventListener('click', () => {
-    notification.style.transform = 'translateX(100%)';
+    notification.classList.remove('show');
     setTimeout(() => notification.remove(), 300);
   });
 
   // Auto remove after 5 seconds
   setTimeout(() => {
     if (notification.parentNode) {
-      notification.style.transform = 'translateX(100%)';
+      notification.classList.remove('show');
       setTimeout(() => notification.remove(), 300);
     }
   }, 5000);
@@ -190,8 +153,7 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+      entry.target.classList.add('animate-in');
     }
   });
 }, observerOptions);
@@ -201,9 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const animateElements = document.querySelectorAll('.project-card, .skill-category, .stat, .contact-form');
 
   animateElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    el.classList.add('animate-prepare');
     observer.observe(el);
   });
 });
@@ -240,29 +200,30 @@ window.addEventListener('scroll', () => {
   const rate = scrolled * -0.5;
 
   if (hero) {
-    hero.style.transform = `translateY(${rate}px)`;
+    hero.style.setProperty('--parallax-offset', `${rate}px`);
+    hero.classList.add('parallax');
   }
 });
 
 // Skills animation on hover
 document.querySelectorAll('.skill-tag').forEach(tag => {
   tag.addEventListener('mouseenter', function () {
-    this.style.transform = 'translateY(-2px) scale(1.05)';
+    this.classList.add('hover');
   });
 
   tag.addEventListener('mouseleave', function () {
-    this.style.transform = 'translateY(0) scale(1)';
+    this.classList.remove('hover');
   });
 });
 
 // Project cards hover effect enhancement
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('mouseenter', function () {
-    this.style.transform = 'translateY(-10px) scale(1.02)';
+    this.classList.add('hover');
   });
 
   card.addEventListener('mouseleave', function () {
-    this.style.transform = 'translateY(0) scale(1)';
+    this.classList.remove('hover');
   });
 });
 
@@ -271,63 +232,27 @@ window.addEventListener('load', () => {
   document.body.classList.add('loaded');
 });
 
-// Add CSS for loading animation
-const loadingStyles = `
-    body {
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
-
-    body.loaded {
-        opacity: 1;
-    }
-
-    .nav-link.active {
-        color: var(--primary-color);
-    }
-
-    .nav-link.active::after {
-        width: 100%;
-    }
-`;
-
-const styleSheet = document.createElement('style');
-styleSheet.textContent = loadingStyles;
-document.head.appendChild(styleSheet);
-
 // Add cursor follow effect for interactive elements
 document.addEventListener('mousemove', (e) => {
   const cursor = document.querySelector('.custom-cursor');
   if (!cursor) {
     const newCursor = document.createElement('div');
     newCursor.className = 'custom-cursor';
-    newCursor.style.cssText = `
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: var(--primary-color);
-            border-radius: 50%;
-            pointer-events: none;
-            mix-blend-mode: difference;
-            z-index: 9999;
-            transition: transform 0.1s ease;
-            opacity: 0;
-        `;
     document.body.appendChild(newCursor);
   }
 
   const cursorElement = document.querySelector('.custom-cursor');
   cursorElement.style.left = e.clientX - 10 + 'px';
   cursorElement.style.top = e.clientY - 10 + 'px';
-  cursorElement.style.opacity = '1';
+  cursorElement.classList.add('visible');
 });
 
 // Hide cursor when leaving window
 document.addEventListener('mouseleave', () => {
   const cursor = document.querySelector('.custom-cursor');
   if (cursor) {
-    cursor.style.opacity = '0';
+    cursor.classList.remove('visible');
   }
 });
 
-console.log('🚀 Сайт-профайл завантажено успішно! Готовий для тестування GitHub Code Reviewer.');
+console.log('🚀 Profile website loaded successfully! Ready for GitHub Code Reviewer testing.');
