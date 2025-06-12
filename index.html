@@ -118,93 +118,17 @@
         <section id="skills" class="skills">
             <div class="container">
                 <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Frontend</h3>
-                        <div class="skill-items">
-                            <div class="skill-item">
-                                <span class="skill-name">JavaScript</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-skill="95"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">TypeScript</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-skill="90"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">React</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-skill="88"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Vue.js</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-skill="85"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Backend</h3>
-                        <div class="skill-items">
-                            <div class="skill-item">
-                                <span class="skill-name">Node.js</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-skill="92"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Python</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-skill="87"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">PostgreSQL</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-skill="80"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">MongoDB</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-skill="75"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>DevOps & Tools</h3>
-                        <div class="skill-items">
-                            <div class="skill-item">
-                                <span class="skill-name">Docker</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-skill="83"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">AWS</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-skill="78"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">GitHub Actions</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-skill="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Jest</span>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" data-skill="90"></div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="skills-filter">
+                    <input type="text" id="skills-search" placeholder="Search skills..." class="skills-search-input">
+                    <button id="skills-refresh" class="skills-refresh-btn" title="Refresh skills data">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                <div class="skills-grid" id="skills-container">
+                    <!-- Skills will be dynamically loaded here -->
+                    <div class="skills-loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Loading skills...</p>
                     </div>
                 </div>
             </div>
