@@ -1,0 +1,24 @@
+# Налаштування для PR Reviewer
+[pr_reviewer]
+require_tests_review = false
+require_score_review = false
+require_can_be_split_review = false
+extra_instructions = "Focus on code quality, security, and performance issues"
+
+# Налаштування для PR Description
+[pr_description]
+publish_labels = true
+add_original_user_description = true
+keep_original_user_title = true
+
+# Налаштування для Code Suggestions
+[pr_code_suggestions]
+num_code_suggestions = 6
+commitable_code_suggestions = true
+suggestions_score_threshold = 7
+
+# Загальні налаштування
+[config]
+model = "gpt-4"
+model_turbo = "gpt-4"
+git_provider = "github"
