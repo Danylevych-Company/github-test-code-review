@@ -15,8 +15,8 @@ jobs:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         # OPENAI_API_BASE: ${{ secrets.OPENAI_API_BASE }}
       # Optional configurations:
-      # with:
-      #   model: "gpt-3.5-turbo"
-      #   temperature: 0.2
-      #   review_per_file: true
-      #   comment_per_file: true
+      with:
+        model: "gpt-3.5-turbo"
+        temperature: 0.2
+        review_per_file: true
+        comment_per_file: true
