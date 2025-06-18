@@ -21,6 +21,8 @@ jobs:
           # Додаткові налаштування (опціонально)
           github_action_config.auto_review: "true"
           github_action_config.auto_describe: "true" 
-          github_action_config.auto_improve: "true"
+          github_action_config.auto_improve: "true"  
+          pr_code_suggestions.commitable_code_suggestions: "true"
+          pr_code_suggestions.dual_publishing_score_threshold: "7"
           PR_REVIEWER.REQUIRE_TESTS_REVIEW: "false"
           PR_CODE_SUGGESTIONS.NUM_CODE_SUGGESTIONS: 6
