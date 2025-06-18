@@ -1,0 +1,110 @@
+{
+  "skillCategories": [
+    {
+      "name": "Frontend",
+      "skills": [
+        {
+          "name": "JavaScript",
+          "level": 95,
+          "description": "Advanced ES6+, async programming, frameworks"
+        },
+        {
+          "name": "TypeScript",
+          "level": 90,
+          "description": "Strong typing, interfaces, generics"
+        },
+        {
+          "name": "React",
+          "level": 88,
+          "description": "Hooks, Context API, Redux, Next.js"
+        },
+        {
+          "name": "Vue.js",
+          "level": 85,
+          "description": "Composition API, Vuex, Nuxt.js"
+        },
+        {
+          "name": "HTML5",
+          "level": 98,
+          "description": "Semantic markup, accessibility, web standards"
+        },
+        {
+          "name": "CSS3",
+          "level": 92,
+          "description": "Grid, Flexbox, animations, responsive design"
+        }
+      ]
+    },
+    {
+      "name": "Backend",
+      "skills": [
+        {
+          "name": "Node.js",
+          "level": 92,
+          "description": "Express, APIs, microservices, performance optimization"
+        },
+        {
+          "name": "Python",
+          "level": 87,
+          "description": "Django, Flask, data analysis, automation"
+        },
+        {
+          "name": "PostgreSQL",
+          "level": 80,
+          "description": "Complex queries, optimization, migrations"
+        },
+        {
+          "name": "MongoDB",
+          "level": 75,
+          "description": "NoSQL design, aggregation, indexing"
+        },
+        {
+          "name": "Express.js",
+          "level": 89,
+          "description": "RESTful APIs, middleware, authentication"
+        },
+        {
+          "name": "GraphQL",
+          "level": 78,
+          "description": "Schema design, resolvers, Apollo"
+        }
+      ]
+    },
+    {
+      "name": "DevOps & Tools",
+      "skills": [
+        {
+          "name": "Docker",
+          "level": 83,
+          "description": "Containerization, multi-stage builds, orchestration"
+        },
+        {
+          "name": "AWS",
+          "level": 78,
+          "description": "EC2, S3, Lambda, CloudFormation"
+        },
+        {
+          "name": "GitHub Actions",
+          "level": 85,
+          "description": "CI/CD pipelines, automated testing, deployment"
+        },
+        {
+          "name": "Jest",
+          "level": 90,
+          "description": "Unit testing, integration testing, mocking"
+        },
+        {
+          "name": "Git",
+          "level": 94,
+          "description": "Version control, branching strategies, collaboration"
+        },
+        {
+          "name": "Webpack",
+          "level": 82,
+          "description": "Module bundling, optimization, configuration"
+        }
+      ]
+    }
+  ],
+  "lastUpdated": "2025-06-12"
+}

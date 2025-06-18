@@ -115,6 +115,68 @@ Modify CSS variables in the `:root` selector in `styles.css`.
 2. Add corresponding styles in CSS
 3. Update navigation
 
+## 🎯 Dynamic Skills System
+
+The website now features a dynamic skills management system that loads data from JSON instead of hardcoded HTML.
+
+### Features:
+- **📁 JSON-based data**: Skills are stored in `skills.json` for easy maintenance
+- **🔍 Search functionality**: Filter skills by name in real-time
+- **🔄 Refresh capability**: Reload skills data without page refresh
+- **📊 Skill levels**: Automatic categorization (Expert, Advanced, Intermediate, Beginner)
+- **💡 Tooltips**: Hover over skills to see detailed descriptions
+- **⚡ Progressive loading**: Loading states and error handling
+- **🎨 Enhanced animations**: Staggered progress bar animations
+
+### Skills Management:
+
+#### Using the Web Interface:
+- **Search**: Use the search box to filter skills by name
+- **Refresh**: Click the refresh button to reload data from JSON
+
+#### Using the Command Line Tool:
+```bash
+# List all skills
+node skills-manager.js list
+
+# Add a new skill
+node skills-manager.js add "Docker" 85 "DevOps & Tools" "Container orchestration"
+
+# Update existing skill
+node skills-manager.js update "JavaScript" 98 "Advanced ES6+, frameworks"
+
+# Remove a skill
+node skills-manager.js remove "Old Framework"
+
+# Show help
+node skills-manager.js help
+```
+
+#### Direct JSON Editing:
+Edit `skills.json` directly to:
+- Add new skill categories
+- Modify skill levels and descriptions
+- Update the last modified date
+
+### JSON Structure:
+```json
+{
+  "skillCategories": [
+    {
+      "name": "Frontend",
+      "skills": [
+        {
+          "name": "JavaScript",
+          "level": 95,
+          "description": "Advanced ES6+, async programming, frameworks"
+        }
+      ]
+    }
+  ],
+  "lastUpdated": "2025-06-12"
+}
+```
+
 ## 📞 Contact
 
 - **Email**: danylo.levych@example.com
